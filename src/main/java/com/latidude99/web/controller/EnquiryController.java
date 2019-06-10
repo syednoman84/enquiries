@@ -127,7 +127,6 @@ public class EnquiryController {
                 if (files != null && files.length > 0) {
                     int filesNumber = files.length;
                     for (int i = 0; i < filesNumber; i++) {
-                        System.out.println("file number: " + i);
                         if (files[i] != null && files[i].getSize() > 0) {
                             Attachment attachment = new Attachment();
                             attachment.setName(files[i].getOriginalFilename());
@@ -157,12 +156,6 @@ public class EnquiryController {
             Enquiry enquiryCheck = enquiryService.getById(enquiryToSave.getId());
             if (enquiryCheck.getAttachments() != null)
                 logger.info("Attachments number: " + enquiryCheck.getAttachments().size());
-        }
-        logger.info("polygon round brackets: " + enquiry.getPolygon());
-        logger.info("polygon square brackets: " +
-                enquiryService.convertRoundBracketToSquareCoordsArrayString(enquiry.getPolygon()));
-        for (MultipartFile file : files) {
-            System.err.println(file.getOriginalFilename());
         }
         return "enquirySubmit";
     }
@@ -220,6 +213,7 @@ public class EnquiryController {
         model.addAttribute("closedByUser", closedByUser);
         Enquiry enquiryToView = enquiryService.saveComment(fromBean);
         enquiryService.sortProgressUsers(enquiryToView);
+        enquiryService.save(enquiryToView);
         model.addAttribute("enquiry", enquiryToView);
         model.addAttribute("imageDbUrl", baseUrl + "image/" + enquiryToView.getId());
         model.addAttribute("email", null);
