@@ -54,6 +54,8 @@ A small customer service enquiry system, geared towards map and travel bookshops
 # Tests
 
 Tests written using JUnit5, Harmcrest and Spring MockMvc.
+Integration tests rely on entries loaded from *data.sql* script at the start of the application.
+Additionally, some tests execute their own local .sql scripts.
 
 # Setup
 
