@@ -12,6 +12,7 @@ Customer service enquiry system for a travel bookshop.
 ## Table of contents
 * [General Info](#general-info)
 * [Technologies](#technologies)
+* [Tests](#tests)
 * [Setup](#setup)
 * [Launch](#launch)
 * [Features](#features)
@@ -37,7 +38,7 @@ A small customer service enquiry system, geared towards map and travel bookshops
 - Thymeleaf 3 with Thymeleaf Extras for Spring Security and Java 8 Time API support
 - Bootstrap 4
 - Google Maps iFrame
-- Hibernate
+- JPA (Hibernate implementation)
 - MySQL
 - Apache Tomcat 9.0
 - VPS with Debian 8
@@ -49,6 +50,12 @@ A small customer service enquiry system, geared towards map and travel bookshops
 - Spring Boot Maven Plugin
 - Maven Surefire plugin  version 2.22.0
 
+
+# Tests
+
+Tests written using JUnit5, Harmcrest and Spring MockMvc.
+Integration tests rely on entries loaded from *data.sql* script at the start of the application.
+Additionally, some tests execute their own local .sql scripts.
 
 # Setup
 
