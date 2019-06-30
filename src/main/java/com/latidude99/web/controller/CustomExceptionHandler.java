@@ -35,7 +35,7 @@ import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-@EnableWebMvc
+//@EnableWebMvc
 @ControllerAdvice
 public class CustomExceptionHandler {
 
@@ -43,11 +43,6 @@ public class CustomExceptionHandler {
     public String handleMaxSizeException(MaxUploadSizeExceededException exc,
                                          HttpServletRequest request, HttpServletResponse response) {
         return "redirect:/enquiry/form/uploadfail";
-    }
-
-    @ExceptionHandler({ Exception.class })
-    public String handleAll(Exception ex, Model model) {
-        return "enquiryError";
     }
 
 }

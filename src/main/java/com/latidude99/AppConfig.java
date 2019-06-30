@@ -24,20 +24,30 @@ package com.latidude99;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
+import org.springframework.http.CacheControl;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.latidude99.model.Role;
 import com.latidude99.service.EnquiryService;
 import com.latidude99.service.UserService;
 import com.latidude99.util.EnquiryListWrapper;
+import org.springframework.web.servlet.resource.PathResourceResolver;
+
+import java.util.concurrent.TimeUnit;
 
 @Profile("!test")
 @Configuration
+//@EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class}) // disabled in application.properties
 public class AppConfig implements WebMvcConfigurer {
 
     @Autowired
@@ -45,7 +55,6 @@ public class AppConfig implements WebMvcConfigurer {
 
     @Autowired
     EnquiryService enquiryService;
-
 
     /*
      * Adds users with roles pre-defined in data.sql
@@ -66,6 +75,7 @@ public class AppConfig implements WebMvcConfigurer {
 
         userService.getAll().forEach(u -> userService.trimUserEmail(u));
     }
+
 
     @Bean
     public EnquiryListWrapper createEnquiryListWrapper() {

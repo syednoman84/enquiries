@@ -4,10 +4,9 @@
 <head>
     <title>Error page</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.min.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap-datetimepicker.min.css}" media="screen"/>
-    <script type="text/javascript" th:src="@{js/jquery-3.3.1.min.js}"></script>
-    <script type="text/javascript" th:src="@{js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <style>
         body, html {font-family: Lucida Grande, Helvetica , Geneva, Verdana, Arial, Helvetica, sans-serif;
             color: white; background-color: #333; height: 100%;}
@@ -26,18 +25,7 @@
 <body>
 <br /><br />
 <h4 style="display: block; text-align: center;">Oops, sth went wrong, try again</h4>
-<!--
-<br /><br />
 
-		<div style="display: block;">
-			<form action="#" th:action="@{/clearBuffers}" method="post" th:object="${contactWrapper}">
-  	          <input type="hidden" th:field="*{resultList}" />
-			  <button class="btn btn-sm" id="inout-btn"  style="width: 86%; margin-left:4%; margin-right:7%;"
-			  type="submit" th:text="#{clear.buffers}">- Clear buffers- </button>
-		    </form>
-			<br />
-		</div>
- -->
 <br /><br />
 <a href="index.html"
    th:href="@{/}"><button class="btn btn-home">Back to Enquiry Form Page</button></a>
@@ -74,7 +62,7 @@
             <tr>
                 <td>Trace</td>
                 <td>
-                    <pre th:text="${trace}"></pre>
+                    <pre style="color: beige" th:text="${trace}"></pre>
                 </td>
             </tr>
         </table>

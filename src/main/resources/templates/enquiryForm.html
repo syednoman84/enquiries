@@ -63,6 +63,11 @@
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
             <div style="margin-top: 15px">
 
+         <span id="error-message" style="color:grey; font-size: 13px; margin-right: 40px !important">
+             USER: demo@demo.com / 111111 || ADMIN: latidude99test@gmail.com / 1100011
+         </span>
+
+
          <span id="error-message" style="color:red !important"
                th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null and session[SPRING_SECURITY_LAST_EXCEPTION].message != null}"
                th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}">---bad credentials---
