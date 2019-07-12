@@ -26,6 +26,8 @@ Customer service enquiry system for a travel bookshop.
 
 A small customer service enquiry system, geared towards map and travel bookshops. Includes options to attach files and draw a polygon on Google Maps making it much simpler to describe the exact area of interest.  
 
+You can visit live demo at http://enquiry.latidude99.com
+
 <p align="center">
   <img src="images/enquiry_00b.JPG" width=100%>
 </p>
