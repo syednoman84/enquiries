@@ -76,7 +76,7 @@ public class EmailService {
         context.setVariable("enquiry", enquiry);
         String html = templateEngine.process("enquiryPageEmail", context);
 
-        helper.setTo(user.getEmail());
+        helper.setTo("syednoman84@gmail.com");
         helper.setText(html, true);
         helper.setSubject("Enquiry " + enquiry.getId() + ", " +
                 enquiry.getName() + ", " + enquiry.getCreatedDate().format(formatter));
